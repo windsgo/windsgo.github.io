@@ -3,7 +3,7 @@ L2Dwidget.init({
         scale: 1,
         hHeadPos: 0.5,
         vHeadPos: 0.618,
-        jsonPath: 'live2d/huli0622/huli0622.model3.json',       // xxx.model.json 的路径,换人物修改这个
+        jsonPath: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-hibiki@1.0.5/assets/hibiki.model.json',       // xxx.model.json 的路径,换人物修改这个
     },
     display: {
         superSample: 1,     // 超采样等级

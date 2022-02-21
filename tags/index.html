@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-hans">
+<html lang="zh-CN">
 <head>
   <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Windsgo Website</title>
+  <title>我的全新 Hugo 网站</title>
   <link rel = 'canonical' href = '/tags/'>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +55,7 @@
     <div id="logo" style="background-image: url(images/logo.png)"></div>
   
   <div id="title">
-    <h1>Windsgo Website</h1>
+    <h1>我的全新 Hugo 网站</h1>
   </div>
   </a>
   <div id="nav">
@@ -63,6 +63,8 @@
       <li class="icon">
         <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
       </li>
+      
+        <li><a href="/post/">文章</a></li>
       
     </ul>
   </div>
@@ -92,16 +94,70 @@
 
     <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2022  Windsgo Website 
+    Copyright &copy; 2022  我的全新 Hugo 网站 
   </div>
   <div class="footer-right">
     <nav>
       <ul>
         
+        <li><a href="/post/">文章</a></li>
+        
+        
+        <script
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"
+        ></script>
+        <script
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.0.min.js"
+        ></script>
+
+        <script type="text/javascript">
+          L2Dwidget.init({
+            model: {
+              scale: 1,
+              hHeadPos: 0.5,
+              vHeadPos: 0.618,
+              jsonPath:
+                "https://cdn.jsdelivr.net/npm/live2d-widget-model-hibiki@1.0.5/assets/hibiki.model.json", 
+            },
+            display: {
+              superSample: 1, 
+              width: 120, 
+              height: 300, 
+              position: "left", 
+              hOffset: 0, 
+              vOffset: 0, 
+            },
+            mobile: {
+              show: true, 
+              scale: 1, 
+              motion: true, 
+            },
+            react: {
+              opacityDefault: 1, 
+              opacityOnHover: 1, 
+            },
+          });
+        </script>
+        
       </ul>
     </nav>
   </div>
 </footer>
+
+
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    L2Dwidget.init({ 
+        "model": { "jsonPath":"https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json", "scale": 1, "hHeadPos":0.5, "vHeadPos":0.618 },
+        
+        "display": { "position": "right", "width": 100, "height": 200, "hOffset": 0, "vOffset": 0 }, 
+        "mobile": { "show": true, "scale": 0.5 },
+        "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 } 
+        });
+</script>
+
 
 
   </div>
