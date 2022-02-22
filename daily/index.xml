@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dailies on Windsgo&#39;s Blog</title>
+    <link>/daily/</link>
+    <description>Recent content in Dailies on Windsgo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Windsgo</copyright>
+    <lastBuildDate>Tue, 22 Feb 2022 22:29:42 +0800</lastBuildDate><atom:link href="/daily/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>20220222 01</title>
+      <link>/daily/20220222-01/</link>
+      <pubDate>Tue, 22 Feb 2022 22:29:42 +0800</pubDate>
+      
+      <guid>/daily/20220222-01/</guid>
+      <description>试图开启一个新的目录 测试目录</description>
+    </item>
+    
+  </channel>
+</rss>

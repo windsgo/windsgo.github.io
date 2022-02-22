@@ -6,7 +6,26 @@
     <description>Recent content on Windsgo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 21 Feb 2022 19:13:19 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Windsgo</copyright>
+    <lastBuildDate>Tue, 22 Feb 2022 22:29:42 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>20220222 01</title>
+      <link>/daily/20220222-01/</link>
+      <pubDate>Tue, 22 Feb 2022 22:29:42 +0800</pubDate>
+      
+      <guid>/daily/20220222-01/</guid>
+      <description>试图开启一个新的目录 测试目录</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/post/test/</link>
+      <pubDate>Tue, 22 Feb 2022 22:27:45 +0800</pubDate>
+      
+      <guid>/post/test/</guid>
+      <description>测试文章 测试</description>
+    </item>
+    
     <item>
       <title>My First Blog</title>
       <link>/post/first/</link>
@@ -22,7 +41,10 @@
       <pubDate>Mon, 21 Feb 2022 19:12:24 +0800</pubDate>
       
       <guid>/about/</guid>
-      <description>About Me Hi, I&amp;rsquo;m a person that is not so famous~</description>
+      <description>About Me Hi, I&amp;rsquo;m a person that is not so famous~
+Github: https://github.com/windsgo
+Gitee: https://gitee.com/windsgo
+email: 1245784195@qq.com</description>
     </item>
     
   </channel>
