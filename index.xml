@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>xxxx</title>
+    <title>Windsgo&#39;s Blog</title>
     <link>/</link>
-    <description>Recent content on xxxx</description>
+    <description>Recent content on Windsgo&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Mon, 21 Feb 2022 19:13:19 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First</title>
+      <title>My First Blog</title>
       <link>/post/first/</link>
       <pubDate>Mon, 21 Feb 2022 19:13:19 +0800</pubDate>
       
       <guid>/post/first/</guid>
-      <description>Post First 第一 一些内容 contents xxx asiosadfj;as sajdlsjjsda asdjoijfioasjidasjio fiosadjfiojsdfo jfoajsilds s s f e 3 aaa dksald dsafd fsdfasdf fasfjoas aaddfa sdasd dsada sada</description>
+      <description>我的第一篇摸鱼文 这个博客搞出来还是蛮麻烦的，但其实也挺简单的，但我实在是太小白了，html，js，css，hugo，nginx等等啥都不会，</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Mon, 21 Feb 2022 19:12:24 +0800</pubDate>
       
       <guid>/about/</guid>
-      <description>标题 Title 内容 contene</description>
+      <description>About Me Hi, I&amp;rsquo;m a person that is not so famous~</description>
     </item>
     
   </channel>
