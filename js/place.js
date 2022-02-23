@@ -16,8 +16,8 @@
     app.stage.addChild(model);
     
     // fit the window
-    model.scale.set(0.15);
-    model.anchor.set(0.25,0.05);
+    model.scale.set(0.1);
+    model.anchor.set(0.25,0.0);
 
     //model.y = innerHeight * 0.05;
       
