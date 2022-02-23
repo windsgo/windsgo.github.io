@@ -18,12 +18,12 @@
     </item>
     
     <item>
-      <title>Test</title>
+      <title>博客构建记录</title>
       <link>/post/test/</link>
       <pubDate>Tue, 22 Feb 2022 22:27:45 +0800</pubDate>
       
       <guid>/post/test/</guid>
-      <description>测试文章 测试</description>
+      <description>博客构建记录 本地搭建 在sourceforge上下载hugo的extended版本：hugo_extended_0.92.2_Windows-</description>
     </item>
     
     <item>
