@@ -85,7 +85,7 @@
 
   <div class="content" itemprop="articleBody">
   
-    <h2 id="博客构建记录">博客构建记录</h2>
+    <h1 id="博客构建记录">博客构建记录</h1>
 <h2 id="本地搭建">本地搭建</h2>
 <ul>
 <li>
@@ -134,10 +134,81 @@ git add .
 git commit -m <span style="color:#e6db74">&#34;first commit&#34;</span>
 git remote add origin root@119.3.100.49:/root/git/hugo.git
 git push -u origin master
-</code></pre></div><p>推送后，在远程仓库中启动或重启nginx服务即可。</p>
+</code></pre></div></li>
+<li>
+<p>推送后，在远程仓库中启动或重启nginx服务即可。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">service nginx restart
 </code></pre></div></li>
 </ul>
+<h2 id="看板娘放置方法">看板娘放置方法</h2>
+<p>我用的方法其实是挺简单的，功能也比较少，还是懒得搞，主要是利用了pixi.js和pixi-live2d-display两个npm包进行的，我也没有用依赖cdn的方法，我直接把依赖项全部下载到static目录下了。</p>
+<ul>
+<li>
+<p>直接更改主题文件，定义canvas放置的位置：</p>
+<p>在<code>./themes/cactus/layouts/partials</code>中新增一个文件<code>live2d.html</code>，内容如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">position: fixed;
+</span><span style="color:#e6db74">left: 0px;
+</span><span style="color:#e6db74">bottom: 0px;
+</span><span style="color:#e6db74">width: 250px;
+</span><span style="color:#e6db74">height: 400px;
+</span><span style="color:#e6db74">z-index: 99999;
+</span><span style="color:#e6db74">opacity: 1;
+</span><span style="color:#e6db74">pointer-events: none;&#34;</span>&gt;
+&lt;<span style="color:#f92672">canvas</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">canvas</span>&gt;&lt;/<span style="color:#f92672">canvas</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/js/live2dcubismcore.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/js/live2d.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/js/pixi.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/js/index.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/js/place.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>并修改<code>./themes/cactus/layouts/_default/baseof.html</code>文件内容如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">...
+    {{ end }}
+
+    {{ partial &#34;footer.html&#34; . }}
+    {{ partial &#34;live2d.html&#34; . }} # 新增 
+
+&lt;/<span style="color:#f92672">div</span>&gt;
+...
+</code></pre></div></li>
+<li>
+<p>在<code>/static/js/</code>中新增<code>place.js</code>文件，这个脚本用于加载模型并放置在canvas画布中，内容如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cubism4Model</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/live2d/huli0622/huli0622.model3.json&#34;</span>;
+<span style="color:#75715e">// 是live2d文件放置的目录/static/live2d/...
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">live2d</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">PIXI</span>.<span style="color:#a6e22e">live2d</span>;
+
+(<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">main</span>() {
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">PIXI</span>.<span style="color:#a6e22e">Application</span>({
+  <span style="color:#a6e22e">view</span><span style="color:#f92672">:</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;canvas&#34;</span>),
+  <span style="color:#a6e22e">autoStart</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+
+  <span style="color:#a6e22e">transparent</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>, <span style="color:#75715e">// 画布透明 
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">resizeTo</span><span style="color:#f92672">:</span> window
+});
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">model</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">PIXI</span>.<span style="color:#a6e22e">live2d</span>.<span style="color:#a6e22e">Live2DModel</span>.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">cubism4Model</span>);
+
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">stage</span>.<span style="color:#a6e22e">addChild</span>(<span style="color:#a6e22e">model</span>);
+
+<span style="color:#a6e22e">model</span>.<span style="color:#a6e22e">scale</span>.<span style="color:#a6e22e">set</span>(<span style="color:#ae81ff">0.15</span>);
+<span style="color:#a6e22e">model</span>.<span style="color:#a6e22e">anchor</span>.<span style="color:#a6e22e">set</span>(<span style="color:#ae81ff">0.25</span>,<span style="color:#ae81ff">0.05</span>);
+})();
+</code></pre></div></li>
+<li>
+<p>将依赖项下载到<code>/static/js/</code>中，可以利用wget工具，下载以下文件：</p>
+<ul>
+<li><a href="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js">https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js</a></li>
+<li><a href="https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js">https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js</a></li>
+<li><a href="https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js.map">https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js.map</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/pixi.js@5.3.6/dist/pixi.min.js">https://cdn.jsdelivr.net/npm/pixi.js@5.3.6/dist/pixi.min.js</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/pixi.js@5.3.6/dist/pixi.min.js.map">https://cdn.jsdelivr.net/npm/pixi.js@5.3.6/dist/pixi.min.js.map</a></li>
+<li><a href="https://cdn.jsdelivr.net/npm/pixi-live2d-display/dist/index.min.js">https://cdn.jsdelivr.net/npm/pixi-live2d-display/dist/index.min.js</a></li>
+</ul>
+</li>
+</ul>
+<p>完成以上配置，看板娘就有啦。</p>
+<p><img src="/images/2/live2d-example.png" alt="live2d-example"></p>
 
   
   </div>
