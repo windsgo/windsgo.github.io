@@ -52,6 +52,7 @@
   <div class="content index py4">
 
     <header id="header">
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
   <a href="">
   
     <div id="logo" style="background-image: url(/images/logo.png)"></div>
@@ -76,6 +77,7 @@
       
     </ul>
   </div>
+  
 </header>
 
 
@@ -94,7 +96,20 @@
 </article>
 
 
+    <div id="vcomments"></div>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'j0EDAA3bGVUozFRWvmhGROEb-gzGzoHsz',
+            appKey: '9yFeTF7yDjAKFqLEX9dQiiw4',
+            visitor: true, 
+            recordIP: true
+        })
+    </script>
+
+
     <footer id="footer">
+  
   <div class="footer-left">
     Copyright &copy; 2022  Windsgo 
   </div>
@@ -118,6 +133,7 @@
     </nav>
   </div>
 </footer>
+
 
 
 
