@@ -19,8 +19,31 @@
     model.scale.set(0.1);
     model.anchor.set(0.25,0.0);
 
+    const foreground = PIXI.Sprite.from(PIXI.Texture.WHITE);
+    foreground.width = model.internalModel.width;
+    foreground.height = model.internalModel.height;
+    foreground.alpha = 0.2;
+
+    model.addChild(foreground);
+
+    foreground.visible = true;
+
+    const hitAreaFrames = new live2d.HitAreaFrames();
+
+    model.addChild(hitAreaFrames);
+
+    hitAreaFrames.visible = true;
     //model.y = innerHeight * 0.05;
-      
+    model.on("hit", (hitAreas) => {
+      console.log("hit");
+      if (hitAreas.includes("Body")) {
+        model.motion("Param32");
+      }
+  
+      if (hitAreas.includes("Head")) {
+        model.expression();
+      }
+    });  
 
   })();
 
