@@ -114,12 +114,10 @@ std<span style="color:#f92672">::</span>string c <span style="color:#f92672">=</
 </span><span style="color:#75715e"></span>std<span style="color:#f92672">::</span>string c( std<span style="color:#f92672">::</span>move(make_a_string()) )
 <span style="color:#75715e">// 而实际上我们都不用这么做，因为c++11以后有了返回值优化的说法
 </span><span style="color:#75715e">// 编译器会帮我们尝试移动构造而不是拷贝构造，我们只需要实现对应对象的移动构造函数即可
-</span></code></pre></div><p>C++不建议定义一个右值引用对象，或将函数返回值声明为右值引用，因为这么做不仅基本上没有意义，编译也有时候无法通过，如：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">std<span style="color:#f92672">::</span>string<span style="color:#f92672">&amp;&amp;</span> ra <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>move(a);
-</code></pre></div><p>这句话表示ra本身值类别是一个左值，类型是一个绑定到右值std::move(a)的右值引用，而绑定到的对象本身是即将消亡的（或我们认为他是个临时的、即将消亡的），这么绑定基本上毫无意义，而去掉&amp;&amp;符号之后：</p>
+</span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">std<span style="color:#f92672">::</span>string<span style="color:#f92672">&amp;&amp;</span> ra <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>move(a);
+</code></pre></div><p>这句话表示ra本身值类别是一个左值，类型是一个右值引用，并没有新构造出一个对象。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">std<span style="color:#f92672">::</span>string ra <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>move(a);
-</code></pre></div><p>这句话的含义不同，他实际上是将a强制转化为右值，调用了string类的移动构造函数够早了另一个对象ra，将a的资源交给了ra，这样做往往是有意义的。</p>
-<p>函数返回值的情况也是类似，而且更容易出错，如果返回一个在栈上创建的变量，然后返回其右值引用，那么在这一行结束之后，出了作用域该对象将被析构，而引用竟然仍然可能被持有，这十分危险。</p>
+</code></pre></div><p>这句话表示使用移动构造函数构造出了一个新的对象ra；</p>
 <h2 id="stdmove的典型应用">std::move的典型应用</h2>
 <p>std::move函数实际上就是一个基于模板的强制转化为右值的方法，类似于(std::string&amp;&amp;)a，其相当于std::move(a)。</p>
 <p>主要就是需要移动构造时，使用move将程序员自己临时创建的一个变量转化为右值，使得编译器调用类的实际移动构造函数。</p>
