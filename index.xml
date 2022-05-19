@@ -10,10 +10,10 @@
     <lastBuildDate>Thu, 19 May 2022 20:27:55 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>cpp 移动语义学习小结</title>
-      <link>/daily/20220519-01/</link>
+      <link>/study/20220519-01/</link>
       <pubDate>Thu, 19 May 2022 20:27:55 +0800</pubDate>
       
-      <guid>/daily/20220519-01/</guid>
+      <guid>/study/20220519-01/</guid>
       <description>右值、左值、右值引用？ std::string a = &amp;#34;abc&amp;#34;; // a是一个左值, &amp;#34;abc&amp;#34;是纯右值prvalue std::string&amp;amp; b = a; // b是一个左值，同时他是绑定到左值的左</description>
     </item>
     
@@ -24,24 +24,6 @@
       
       <guid>/daily/20220309-01/</guid>
       <description>疫情 一觉醒来学校封了。 一觉醒来上网课了。 一觉醒来发现馆长要找不到了。 这都啥事儿。</description>
-    </item>
-    
-    <item>
-      <title>20220225</title>
-      <link>/daily/20220225-01/</link>
-      <pubDate>Fri, 25 Feb 2022 22:50:05 +0800</pubDate>
-      
-      <guid>/daily/20220225-01/</guid>
-      <description>今日小记录 今天下课去包图转了一圈，纯粹就是想散散心，前两天追更的水源楼主，不知道他有没有再去看思源湖的小鸭子了，就是看见他发的那层的那一瞬间</description>
-    </item>
-    
-    <item>
-      <title>20220224</title>
-      <link>/daily/20220224-01/</link>
-      <pubDate>Tue, 22 Feb 2022 22:29:42 +0800</pubDate>
-      
-      <guid>/daily/20220224-01/</guid>
-      <description>只是随记 俄罗斯和乌克兰，没法多说，也不知道怎么评价，只希望世界能和平。 引用可能是一句名言的名言：“于是战争降临了，人们开始感慨和平的可贵。”</description>
     </item>
     
     <item>
