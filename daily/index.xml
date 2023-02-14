@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dailies on Windsgo&#39;s Blog</title>
+    <link>/daily/</link>
+    <description>Recent content in Dailies on Windsgo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Windsgo</copyright>
+    <lastBuildDate>Tue, 14 Feb 2023 11:40:38 +0800</lastBuildDate><atom:link href="/daily/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>20230214 01</title>
+      <link>/daily/20230214-01/</link>
+      <pubDate>Tue, 14 Feb 2023 11:40:38 +0800</pubDate>
+      
+      <guid>/daily/20230214-01/</guid>
+      <description>时隔许久的更新 服务器租期到了，租不起啦，看板娘加载的时间和消耗也蛮大的，就去掉啦，简简单单的也挺好。 之后就应该部署在 github pages或者 gitee pag</description>
+    </item>
+    
+    <item>
+      <title>20220731</title>
+      <link>/daily/20220731/</link>
+      <pubDate>Sun, 31 Jul 2022 16:00:29 +0800</pubDate>
+      
+      <guid>/daily/20220731/</guid>
+      <description>Emmm 点一杯奶茶，七分甜，杨枝甘露，冰沙，西米露换小丸子，就很开心~</description>
+    </item>
+    
+    <item>
+      <title>20220309 01</title>
+      <link>/daily/20220309-01/</link>
+      <pubDate>Wed, 09 Mar 2022 14:11:52 +0800</pubDate>
+      
+      <guid>/daily/20220309-01/</guid>
+      <description>疫情 一觉醒来学校封了。 一觉醒来上网课了。 一觉醒来发现馆长要找不到了。 这都啥事儿。</description>
+    </item>
+    
+  </channel>
+</rss>

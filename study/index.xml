@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Studies on Windsgo&#39;s Blog</title>
+    <link>/study/</link>
+    <description>Recent content in Studies on Windsgo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Windsgo</copyright>
+    <lastBuildDate>Thu, 19 May 2022 20:27:55 +0800</lastBuildDate><atom:link href="/study/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cpp 移动语义学习小结</title>
+      <link>/study/20220519-01/</link>
+      <pubDate>Thu, 19 May 2022 20:27:55 +0800</pubDate>
+      
+      <guid>/study/20220519-01/</guid>
+      <description>右值、左值、右值引用？ std::string a = &amp;#34;abc&amp;#34;; // a是一个泛左值glvalue, &amp;#34;abc&amp;#34;是纯右值prvalue std::string&amp;amp; b = a; // b是一个泛左值，同时</description>
+    </item>
+    
+  </channel>
+</rss>

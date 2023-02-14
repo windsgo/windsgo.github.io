@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Windsgo&#39;s Blog</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Windsgo&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Windsgo</copyright>
+    <lastBuildDate>Tue, 22 Feb 2022 22:27:45 +0800</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>博客构建记录</title>
+      <link>/post/test/</link>
+      <pubDate>Tue, 22 Feb 2022 22:27:45 +0800</pubDate>
+      
+      <guid>/post/test/</guid>
+      <description>博客构建记录 本地搭建 在sourceforge上下载hugo的extended版本：hugo_extended_0.92.2_Windows-</description>
+    </item>
+    
+    <item>
+      <title>My First Blog</title>
+      <link>/post/first/</link>
+      <pubDate>Mon, 21 Feb 2022 19:13:19 +0800</pubDate>
+      
+      <guid>/post/first/</guid>
+      <description>我的第一篇摸鱼文 这个博客搞出来还是蛮麻烦的，但其实也挺简单的，但我实在是太小白了，html，js，css，hugo，nginx等等啥都不会，</description>
+    </item>
+    
+  </channel>
+</rss>
